@@ -1,0 +1,15 @@
+<div class="home-container">
+    <h2>Welcome, {{ user?.firstName }}</h2>
+    <nav>
+      <a routerLink="/my-shifts">My Shifts</a>
+      <a routerLink="/add-shift">Add Shift</a>
+      <a routerLink="/profile">Edit Profile</a>
+      <button (click)="logout()">Logout</button>
+    </nav>
+    <div class="statistics">
+      <h3>Upcoming Shift:</h3>
+      <p *ngIf="upcomingShift">{{ upcomingShift | json }}</p>
+      <h3>This Week’s Past Shifts:</h3>
+      <p *ngFor="let shift of pastShifts">{{ shift | json }}</p>
+    </div>
+  </div>

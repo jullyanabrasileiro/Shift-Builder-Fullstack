@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 
-// import { InnerTextDemoComponent } from './inner-text-demo/inner-text-demo.component';
-// import { StructuralDirectivesComponentComponent } from './structural-directives-component/structural-directives-component.component';
-// import { ShiftsListComponent } from './components/shifts-list/shifts-list.component';
-// import { ShiftsFilterComponent } from './components/shifts-filter/shifts-filter.component';
+
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';

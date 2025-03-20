@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { WorkersService } from 'src/app/services/workers.service';
-import { Worker } from 'src/app/models/worker.model';
+import { WorkersService } from '../../../services/workers.service';
+import { Worker } from '../../../models/worker.model';
+
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-all-workers',
@@ -10,7 +13,7 @@ import { Worker } from 'src/app/models/worker.model';
 export class AllWorkersComponent implements OnInit {
   workers: Worker[] = [];
 
-  constructor(private workersService: WorkersService) {}
+  constructor(private workersService: WorkersService, private router: Router) {}
 
   ngOnInit(): void {
     this.getAllWorkers();
@@ -23,6 +26,6 @@ export class AllWorkersComponent implements OnInit {
   }
 
   viewProfile(workerId: number): void {
-    // Navegação para perfil do worker
+    this.router.navigate(['/profile', workerId]);
   }
 }

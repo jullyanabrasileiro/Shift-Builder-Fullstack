@@ -39,7 +39,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let shift of shifts" (click)="editShift(shift.id)">
+        <tr *ngFor="let shift of shifts" (click)="editShift(shift.id ?? 0)">
           <td>{{ shift.workerName }}</td>
           <td>{{ shift.date }}</td>
           <td>{{ shift.startTime }}</td>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShiftsService } from '../../../services/shifts.service';
 import { Shift } from '../../../models/shift.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-shifts',
@@ -14,7 +15,7 @@ export class AllShiftsComponent implements OnInit {
   startDate: string = '';
   endDate: string = '';
 
-  constructor(private shiftsService: ShiftsService) {}
+  constructor(private shiftsService: ShiftsService, private router: Router) {}
 
   ngOnInit(): void {
     this.getAllShifts();
@@ -35,6 +36,7 @@ export class AllShiftsComponent implements OnInit {
   }
 
   editShift(id: number): void {
-    // Navegação para página de edição
+    this.router.navigate(['/edit-shift', id]);
   }
+
 }

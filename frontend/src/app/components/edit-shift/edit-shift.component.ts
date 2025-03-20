@@ -21,6 +21,7 @@ export class EditShiftComponent implements OnInit {
     shiftname: '',
     comments: '',
   };
+  workplaces: string[] = ['Workplace 1', 'Workplace 2', 'Workplace 3'];
 
   constructor(
     private route: ActivatedRoute,
@@ -39,8 +40,7 @@ export class EditShiftComponent implements OnInit {
   }
 
   getShiftDetails(id: number) {
-    const numericId = +id; 
-    this.shiftsService.getShiftById(numericId).subscribe(
+    this.shiftsService.getShiftById(id).subscribe(
       (data: Shift) => {
         this.shiftData = data;
       },
@@ -51,8 +51,7 @@ export class EditShiftComponent implements OnInit {
   }
 
   updateShift() {
-    const numericId = +this.shiftId;
-    this.shiftsService.updateShift(numericId, this.shiftData).subscribe(
+    this.shiftsService.updateShift(this.shiftId, this.shiftData).subscribe(
       () => {
         alert('Shift updated successfully!');
         this.router.navigate(['/my-shifts']);
@@ -61,5 +60,9 @@ export class EditShiftComponent implements OnInit {
         console.error('Error updating shift:', error.message);
       }
     );
+  }
+
+  onEditShift() {
+    this.updateShift(); 
   }
 }

@@ -28,6 +28,24 @@ import { catchError } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class ShiftsService {
+  filterShifts(
+    searchWorkerName: string,
+    searchPlace: string,
+    startDate: string,
+    endDate: string
+  ): Observable<Shift[]> {
+    const params: any = {};
+  
+    if (searchWorkerName) params.workerName = searchWorkerName;
+    if (searchPlace) params.place = searchPlace;
+    if (startDate) params.startDate = startDate;
+    if (endDate) params.endDate = endDate;
+  
+    return this.http
+      .get<Shift[]>(`${this.apiUrl}/filter`, { params })
+      .pipe(catchError((error: HttpErrorResponse) => this.handleError(error)));
+  }
+  
   private apiUrl = 'http://localhost:3000/shifts';
 
   constructor(private http: HttpClient) {}

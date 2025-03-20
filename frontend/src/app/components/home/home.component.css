@@ -18,7 +18,6 @@ body {
 
 h2 {
     font-size: 24px;
-    color: #3498db; /* Primary color */
     margin-bottom: 20px;
 }
 
@@ -27,7 +26,7 @@ nav {
 }
 
 nav a {
-    color: #3498db; /* Primary color */
+    color: #c0392b;
     text-decoration: none;
     font-size: 16px;
     margin-right: 20px;
@@ -64,7 +63,7 @@ nav button:hover {
 
 .statistics h3 {
     font-size: 18px;
-    color: #3498db; /* Primary color */
+    color: #c0392b;
     margin-bottom: 10px;
 }
 

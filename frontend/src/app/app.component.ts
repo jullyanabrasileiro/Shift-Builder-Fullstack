@@ -9,14 +9,10 @@ import { HomeComponent } from './components/home/home.component';
   selector: 'app-root',
   standalone: true,
   imports: [
-    /*InnerTextDemoComponent,
-    StructuralDirectivesComponentComponent,
-    ShiftsListComponent,
-    ShiftsFilterComponent,*/
-    HomeComponent,
     HttpClientModule,
-    CommonModule
-  ],
+    CommonModule,
+    HomeComponent
+],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

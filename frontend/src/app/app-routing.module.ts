@@ -13,8 +13,8 @@ import { AllWorkersComponent } from './components/admin/all-workers/all-workers.
 import { WorkerProfileComponent } from './components/admin/worker-profile/worker-profile.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },  
-  { path: 'login', component: LoginComponent }, 
+  { path: '', component: LoginComponent },  
+  { path: 'home', component: HomeComponent }, 
   { path: 'register', component: RegisterComponent }, 
   { path: 'profile', component: ProfileComponent },
   { path: 'add-shift', component: AddShiftComponent },  

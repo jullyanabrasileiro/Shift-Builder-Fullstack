@@ -18,6 +18,7 @@ import { EditShiftComponent } from './components/edit-shift/edit-shift.component
 import { AddShiftComponent } from './components/add-shift/add-shift.component';
 import { AllShiftsComponent } from './components/admin/all-shifts/all-shifts.component';
 import { WorkerProfileComponent } from './components/admin/worker-profile/worker-profile.component';
+import { MyShiftsComponent } from './components/my-shifts/my-shifts.component'; // ✅ Add this
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { WorkerProfileComponent } from './components/admin/worker-profile/worker
     EditShiftComponent,
     AddShiftComponent,
     AllShiftsComponent,
-    WorkerProfileComponent
+    WorkerProfileComponent,
+    MyShiftsComponent,
   ],
   imports: [BrowserModule,
     FormsModule,

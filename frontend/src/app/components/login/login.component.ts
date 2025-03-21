@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   email: string = '';
@@ -15,8 +15,10 @@ export class LoginComponent {
   constructor(private http: HttpClient, private router: Router) {}
 
   login() {
-    this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
-      const user = users.find(u => u.email === this.email && u.password === this.password);
+    this.http.get<any[]>('http://localhost:3000/users').subscribe((users) => {
+      const user = users.find(
+        (u) => u.email === this.email && u.password === this.password
+      );
       if (user) {
         sessionStorage.setItem('user', JSON.stringify(user));
         this.router.navigate(['/home']);
@@ -25,4 +27,9 @@ export class LoginComponent {
       }
     });
   }
+
+  goToRegister() {
+    this.router.navigate(['/register']);
+  }
+  
 }

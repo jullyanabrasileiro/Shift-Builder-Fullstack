@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     HttpClientModule,
     CommonModule,
-    HomeComponent
+    HomeComponent,
+    RouterModule,
 ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],

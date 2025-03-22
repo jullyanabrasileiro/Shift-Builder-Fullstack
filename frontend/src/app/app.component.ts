@@ -12,7 +12,6 @@ import { RouterModule } from '@angular/router';
   imports: [
     HttpClientModule,
     CommonModule,
-    HomeComponent,
     RouterModule,
 ],
   templateUrl: './app.component.html',

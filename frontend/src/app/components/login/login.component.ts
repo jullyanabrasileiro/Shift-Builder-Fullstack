@@ -15,17 +15,18 @@ export class LoginComponent {
   constructor(private http: HttpClient, private router: Router) {}
 
   login() {
-    this.http.get<any[]>('http://localhost:3000/users').subscribe((users) => {
-      const user = users.find(
-        (u) => u.email === this.email && u.password === this.password
-      );
-      if (user) {
-        sessionStorage.setItem('user', JSON.stringify(user));
+    this.http.post<any>('http://localhost:3000/api/login', {
+      email: this.email,
+      password: this.password,
+    }).subscribe(
+      (response) => {
+        sessionStorage.setItem('user', JSON.stringify(response)); // save auth user
         this.router.navigate(['/home']);
-      } else {
-        this.errorMessage = 'Invalid email or password';
+      },
+      (error) => {
+        this.errorMessage = 'Email ou senha inválidos';
       }
-    });
+    );
   }
 
   goToRegister() {

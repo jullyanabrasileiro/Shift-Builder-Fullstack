@@ -7,6 +7,7 @@ const userRoutes = require('./routes/userRoutes');
 const shiftRoutes = require('./routes/shiftRoutes');
 const permissionRoutes = require('./routes/permissionRoutes');
 const commentRoutes = require('./routes/commentRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 dotenv.config();
 connectDB();
@@ -21,6 +22,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/shifts', shiftRoutes);
 app.use('/api/permissions', permissionRoutes);
 app.use('/api/comments', commentRoutes);
+app.use('/api/auth', authRoutes); 
 
 const PORT = process.env.PORT || 3000;
 

@@ -43,6 +43,6 @@ export class WorkersService {
 
   private handleError(error: HttpErrorResponse): Observable<never> {
     console.error('Erro HTTP:', error.message);
-    return throwError(() => new Error('Algo deu errado com a API.'));
+    return throwError(() => new Error('Something wrong with the API.'));
   }
 }

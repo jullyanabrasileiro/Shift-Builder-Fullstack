@@ -27,13 +27,14 @@ export class RegisterComponent {
     }
 
 
-    this.http.post('http://localhost:3000/users', this.user).subscribe(
+    this.http.post('http://localhost:3000/api/users', this.user).subscribe(
       () => {
-        this.router.navigate(['/login']); 
+        this.router.navigate(['/login']);
       },
       () => {
-        this.errorMessage = 'Error registering user'; 
+        this.errorMessage = 'Error registering user';
       }
     );
+    
   }
 }
